@@ -76,4 +76,28 @@ section{
   font-size: 100px;
   transform: translate(-10%, -10%);
   z-index: 10;
+  overflow: hidden;
+}
+
+.text_p{
+  color: #fff;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+@media screen and (max-width:500px){
+  .slider{
+    background:linear-gradient(150deg,rgb(211, 3, 3),rgb(83, 16, 16));
+  }  
+
+  section{
+    height: 30vh;
+  }
+  
+  .headline{
+    top: 60%;
+    left: 0%;
+    font-size:10vw;
+  } 
 }

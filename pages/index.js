@@ -8,15 +8,18 @@ import { useEffect } from 'react';
 export default function Home() {
 
   useEffect(()=>{
+    const windowSize=window.innerWidth;
+    console.log(windowSize);
       const hero=document.querySelector('.hero');
       const slider=document.querySelector('.slider');
       const menu=document.querySelector('.menu');
     gsap.to(hero,{height:'80%',duration:1,ease:Power4.out});
-    gsap.to(hero,{width:'80%',duration:1,ease:Power4.out,delay:1.2 });
+    windowSize>500 ?gsap.to(hero,{width:'80%',duration:1,ease:Power4.out,delay:1.2 }) : null;
     gsap.fromTo(slider,{height:'0%'},{height:'100%',duration:1,ease:Power4.out,delay:1.2});
     gsap.fromTo('#logo',{opacity:0},{opacity:1,duration:1,delay:1.2})
     gsap.fromTo('.menu',{opacity:0},{opacity:1,duration:1,delay:1.2})
     gsap.fromTo('.headline',{opacity:0,x:0},{opacity:1,x:30,duration:1,delay:1.5})
+    gsap.fromTo('.text_p',{opacity:0},{opacity:1,duration:1,delay:1.5})
     },[]);
     
   return (
@@ -34,11 +37,11 @@ export default function Home() {
             menu
           </span>
         </nav>
-
         <section>
           <div className="hero">
             <img src="/img/car.jpg" alt=""  />
             <h1 className="headline">TT coupe</h1>
+            <p className='text_p'>~Concept~<br />Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, sed rerum! Dolorem, illo inventore? Voluptas possimus dolorum maxime itaque perspiciatis alias quae iusto  tempora dolorum illo, fuga natus! Officia molestias delectus blanditiis architecto quae ad repellendus, pariatur, alias incidunt dolor cum deserunt? Incidunt asperiores, qui molestiae culpa ducimus, perspiciatis nihil ullam assumenda corrupti rerum beatae sed facilis magni vitae dolore iste tenetur quam?</p>
           </div>
         </section>
       </header>
