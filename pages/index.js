@@ -1,21 +1,16 @@
 'use client';
 
 import Head from 'next/head'
-// import Image from 'next/image'
-// import styles from '../styles/Home.module.css'
-import {gsap,Power3,Power4} from 'gsap';
+import {gsap,Power4} from 'gsap';
 import { useEffect } from 'react';
-import { width } from '@mui/system';
 
 
 export default function Home() {
+
   useEffect(()=>{
       const hero=document.querySelector('.hero');
       const slider=document.querySelector('.slider');
       const menu=document.querySelector('.menu');
-    //   console.log(hero);
-    //   const tl=gsap.timeline();
-    //   tl.fromTo(hero,1,{height:'0%'},{height:'80%',ease:Power2.easeInOut});
     gsap.to(hero,{height:'80%',duration:1,ease:Power4.out});
     gsap.to(hero,{width:'80%',duration:1,ease:Power4.out,delay:1.2 });
     gsap.fromTo(slider,{height:'0%'},{height:'100%',duration:1,ease:Power4.out,delay:1.2});
@@ -23,11 +18,7 @@ export default function Home() {
     gsap.fromTo('.menu',{opacity:0},{opacity:1,duration:1,delay:1.2})
     gsap.fromTo('.headline',{opacity:0,x:0},{opacity:1,x:30,duration:1,delay:1.5})
     },[]);
-  
-  // const headline=document.querySelector('.headline');
-  // const heroRef=useRef();
-    // const textRef=useRef<HTMLDivElement | null>(null);
-
+    
   return (
     <div>
       <Head>
@@ -42,7 +33,6 @@ export default function Home() {
           <span className="material-symbols-outlined menu">
             menu
           </span>
-          {/* <img src="menu.png" alt="" srcset="" /> */}
         </nav>
 
         <section>
@@ -53,16 +43,6 @@ export default function Home() {
         </section>
       </header>
       <div className="slider"></div>
-      {/* <hr /> */}
-      {/* <div className="test">
-      <p>test-1</p>
-      <p>test-2</p>
-      <p>test-3</p>
-      <p>test-4</p>
-      <p>test-5</p>
-    </div> */}
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js'></script>
-
     </div>
   )
 }
